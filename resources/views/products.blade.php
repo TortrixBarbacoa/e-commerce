@@ -1,74 +1,8 @@
-@extends('layouts.app')
+<x-header />
 
-@section('contenido')
-
-    {{-- Componente Header --}}
-    <x-header />
-
-    <body class="bg-white">
-
-        {{-- * Banner --}}
-        {{-- Fondo Banner --}}
-        <div class="bg-cover bg-no-repeat bg-center py-36 pl-12"
-            style="background-image: url('{{ asset('img//backgrounds/banner_bg2.jpg') }}');">
-            {{-- Contenido Banner --}}
-            <div class="flex flex-col container">
-                <h1 class="text-8xl text-white font-medium mb-4 font-poppins">
-                    iPhone 14
-                </h1>
-                <p class="text-white font-poppins font-5xl font-thin capitalize">Descúbrelo aquí</p>
-                <div class="mt-12">
-                    <a href="#"
-                        class="hover:bg-white hover:text-black bg-black border border-primary text-white px-8 py-3 font-medium 
-                        rounded-md hover:bg-transparent hover:text-primary transition font-roboto">Compra
-                        Ahora <i class="fa-solid fa-caret-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-
-        {{-- * Categorías --}}
-        <div class="flex flex-col w-full mt-16 content-center align-middle justify-between px-12 mb-24">
-            <h2 class="text-4xl font-poppins font-bold text-blue-700 capitalize text-left mb-6">Compra por Categoría</h2>
-            <div class="grid grid-cols-3 gap-8 mt-5">
-                {{-- Categoría 1 - TV y Video --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/Tv.png" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">TV y Video</a>
-                </div>
-                {{-- Categoría 2 - Celulares --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/catego.png" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Celulares</a>
-                </div>
-                {{-- Categoría 3 - Computación --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/laptop.png" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Computación</a>
-                </div>
-                {{-- Categoría 4 - Electrodomésticos --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/refrigeración.png" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Electrodomésticos</a>
-                </div>
-                {{-- Categoría 5 - Prendas Electrónicas --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/prendas_electronicas.jpg" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Prendas
-                        Electronícas</a>
-                </div>
-                {{-- Categoría 6 - Audífonos --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/audifonos.jpg" alt="category 1" class="w-full">
-                    <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Audífonos</a>
-                </div>
-            </div>
-        </div>
+<body>
+    
+    <x-footer />
 
         <!-- Ofertas Destacadas -->
         <div class="flex flex-col w-full bg-red mt-16 content-center align-middle justify-between px-12 mb-24">
@@ -247,8 +181,6 @@
 
         
         </div>
-        <x-footer />
-    </body>
-@endsection
 
+</body>
 
