@@ -33,38 +33,38 @@
                 {{-- Categoría 1 - TV y Video --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/Tv.png" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('tv') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">TV y Video</a>
                 </div>
                 {{-- Categoría 2 - Celulares --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/catego.png" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('celulares') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Celulares</a>
                 </div>
                 {{-- Categoría 3 - Computación --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/laptop.png" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('computacion') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Computación</a>
                 </div>
                 {{-- Categoría 4 - Electrodomésticos --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/refrigeración.png" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('electrodomesticos') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Electrodomésticos</a>
                 </div>
                 {{-- Categoría 5 - Prendas Electrónicas --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/prendas_electronicas.jpg" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('prendas') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Prendas
                         Electronícas</a>
                 </div>
                 {{-- Categoría 6 - Audífonos --}}
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/audifonos.jpg" alt="category 1" class="w-full">
-                    <a href="#"
+                    <a href="{{ route('audifonos') }}"
                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Audífonos</a>
                 </div>
             </div>

@@ -20,6 +20,30 @@ Route::get('/products', function () {
     return view('/products');
 })->name('products');
 
+Route::get('/tv', function () {
+    return view('/tv');
+})->name('tv');
+
+Route::get('/electrodomesticos', function () {
+    return view('/electrodomesticos');
+})->name('electrodomesticos');
+
+Route::get('/celulares', function () {
+    return view('/celulares');
+})->name('celulares');
+
+Route::get('/computacion', function () {
+    return view('/computacion');
+})->name('computacion');
+
+Route::get('/prendas', function () {
+    return view('/prendas');
+})->name('prendas');
+
+Route::get('/audifonos', function () {
+    return view('/audifonos');
+})->name('audifonos');
+
 Route::get('/', [HomeController::class, 'index']) ->name('welcome');
 
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
