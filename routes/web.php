@@ -16,6 +16,10 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::get('/products', function () {
+    return view('/products');
+})->name('products');
+
 Route::get('/', [HomeController::class, 'index']) ->name('welcome');
 
 Route::get('/register',[RegisterController::class, 'index'])->name('register');

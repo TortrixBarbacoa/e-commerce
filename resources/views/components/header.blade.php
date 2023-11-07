@@ -4,7 +4,7 @@
             <a @auth href="{{ route('registrado', ['user' => $user])}}" @endauth  @guest href="{{route('welcome')}}" @endguest class="text-4xl font-black font-poppins uppercase text-blue-700">UVGStore</a>
         </h1>
         <div class="flex flex-row gap-6 ml-12">
-            <a href="" class="flex flex-row items-center">
+            <a href="{{ route('products') }}" class="flex flex-row items-center">
                 <h3 class="font-lato text-lg font-thin text-black"><i class="text-blue-700 mr-1 fa-solid fa-bag-shopping"></i> Productos</h3>
             </a>
             <a href="" class="flex flex-row items-center">
