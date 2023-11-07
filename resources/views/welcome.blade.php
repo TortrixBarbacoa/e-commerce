@@ -25,7 +25,7 @@
         </div>
 
         <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2 mb-10">
-            <h2 class="font-poppins text-center text-3xl text-white capitalize">Comprar por Categoría</h2>
+            <h2 class="text-5xl font-bold text-gray-800 capitalize text-center mb-6">Compra por Categoría</h2>
             <div class="grid grid-cols-3 gap-3 mt-5">
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/Tv.png" alt="category 1" class="w-full">
@@ -64,6 +64,7 @@
 
         <!-- new arrival -->
         <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2 mb-10">
+            <h2 class="text-5xl font-bold text-gray-800  mb-6 capitalize text-center">Ofertas estacadas</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
@@ -239,7 +240,7 @@
 @section('footer')
 <footer>
     <div class="bg-gray-800 py-4">
-        <div class="container flex items-center justify-between">
+        <div class="container flex items-center justify-between ml-6">
             <p class="text-white">&copy; E-Commerce - 2023</p>
         </div>
     </div>
