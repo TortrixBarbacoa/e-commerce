@@ -15,6 +15,7 @@ export default {
       'black': '#000000',
       'white': '#ffffff',
       'background': '#292929',
+      'red': '#FF0000',
     },
     extend: {},
   },
