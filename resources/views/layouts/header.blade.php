@@ -27,7 +27,7 @@
             <nav class="flex gap-1 items-center">
                 <a class="flex flex-col items-center mx-2" href="">
                     <img src="{{ asset('img/usuario.svg') }}" alt="Login" class="w-6 h-6">
-                    <span class="font-medium uppercase text-gray-600">Login</span>
+                    <span class="font-medium uppercase text-gray-600">puta</span>
                 </a>
                 <a class="flex flex-col items-center mx-2" href="">
                     <img src="{{ asset('img/agregar-usuario.svg') }}" alt="Nueva Cuenta" class="w-6 h-6">
