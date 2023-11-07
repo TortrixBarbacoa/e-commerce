@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('section')
-    @extends('layouts.header')
+    @extends('layouts.main')
        
 
 
