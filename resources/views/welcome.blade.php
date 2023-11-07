@@ -3,7 +3,7 @@
 @section('contenido')
     @extends('layouts.header')
 
-    <body class=" bg-background">
+    <body class="bg-gray-900">
 
         {{-- * Banner --}}
         {{-- Fondo Banner --}}
@@ -24,48 +24,47 @@
             </div>
         </div>
 
-        <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2 mb-10">
-            <h2 class="text-5xl font-bold text-gray-800 capitalize text-center mb-6">Compra por Categoría</h2>
-            <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex flex-col w-full bg-red mt-16 content-center align-middle justify-between px-12 mb-24">
+            <h2 class="text-4xl font-poppins font-bold text-white capitalize text-left mb-6">Compra por Categoría</h2>
+            <div class="grid grid-cols-3 gap-8 mt-5">
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/Tv.png" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Tv
-                        y Video</a>
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Tv y Video</a>
                 </div>
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/catego.png" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Celulares</a>
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Celulares</a>
                 </div>
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/laptop.png" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Computación</a>
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Computación</a>
                 </div>
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/refrigeración.png" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Refrigeración</a>
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Refrigeración</a>
                 </div>
                 <div class="relative rounded overflow-hidden group">
                     <img src="img//category/Prendas_Electrónicas.png" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Prendas
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Prendas
                         Electronícas</a>
                 </div>
                 <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/audifonos.png" alt="category 1" class="w-full">
+                    <img src="img//category/audifonos.jpg" alt="category 1" class="w-full">
                     <a href="#"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Audífonos</a>
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Audífonos</a>
                 </div>
             </div>
         </div>
 
         <!-- new arrival -->
-        <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2 mb-10">
-            <h2 class="text-5xl font-bold text-gray-800  mb-6 capitalize text-center">Ofertas estacadas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="flex flex-col w-full bg-red mt-16 content-center align-middle justify-between px-12 mb-24">
+            <h2 class="text-4xl font-poppins font-bold text-white capitalize text-left mb-6">Ofertas Destacadas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-5">
                 <div class="bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <img src="img//backgrounds/producto1.png" alt="product 1" class="w-full">
