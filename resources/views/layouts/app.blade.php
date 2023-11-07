@@ -11,3 +11,4 @@
 
 
 @yield('contenido')
+@yield('footer')
