@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2">
+    <div class="flex flex-col w-full bg-red mt-10 content-center align-middle justify-between px-2 mb-10">
         <h2 class="font-poppins text-center text-3xl text-white capitalize">Comprar por Categoría</h2>
         <div class="grid grid-cols-3 gap-3 mt-5">
             <div class="relative rounded overflow-hidden group">
@@ -27,14 +27,29 @@
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Tv y Video</a>
             </div>
             <div class="relative rounded overflow-hidden group">
-                <img src="img//category/Tv.png" alt="category 1" class="w-full">
+                <img src="img//category/catego.png" alt="category 1" class="w-full">
                 <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Tv y Video</a>
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Celulares</a>
+            </div>
+            <div class="relative rounded overflow-hidden group">
+                <img src="img//category/laptop.png" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Computación</a>
             </div>
             <div class="relative rounded overflow-hidden group">
                 <img src="img//category/Tv.png" alt="category 1" class="w-full">
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Tv y Video</a>
+            </div>
+            <div class="relative rounded overflow-hidden group">
+                <img src="img//category/catego.png" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Celulares</a>
+            </div>
+            <div class="relative rounded overflow-hidden group">
+                <img src="img//category/laptop.png" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Computación</a>
             </div>
         </div>
     </div>
