@@ -1,7 +1,7 @@
 <header class="p-5 border-b bg-gray-200 shadow">
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-3xl font-black">
-            <a @auth href="{{ route('registrado', ['user' => $user])}}" @endauth  @guest href="{{route('welcome')}}" @endguest class="text-3xl font-black">Max</a>
+            <a @auth href="{{ route('registrado', ['user' => $user])}}" @endauth  @guest href="{{route('welcome')}}" @endguest class="text-5xl font-black font-poppins uppercase text-blue-700">UVGStore</a>
         </h1>
 
         @auth
@@ -33,11 +33,11 @@
         @guest
             <nav class="flex gap-1 items-center">
                 <a class="flex flex-col items-center mx-2" href="{{ route('login') }}">
-                    <img src="{{ asset('img/usuario.svg') }}" alt="Login" class="w-6 h-6">
+                    <i class="fa-solid fa-user text-2xl"></i>
                     <span class="font-medium uppercase text-gray-600">Login</span>
                 </a>
                 <a class="flex flex-col items-center mx-2" href="{{ route('register') }}">
-                    <img src="{{ asset('img/agregar-usuario.svg') }}" alt="Nueva Cuenta" class="w-6 h-6">
+                    <i class="fa-solid fa-right-to-bracket text-2xl"></i>
                     <span class="font-medium uppercase text-gray-600">Registrarse</span>
                 </a>
             </nav>
