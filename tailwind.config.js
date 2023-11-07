@@ -14,7 +14,7 @@ export default {
       'mainBlue': '#0942930',
       'black': '#000000',
       'white': '#ffffff',
-      'background': '#545454',
+      'background': '#292929',
     },
     extend: {},
   },

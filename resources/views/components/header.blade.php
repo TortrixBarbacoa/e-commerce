@@ -1,4 +1,4 @@
-<header class="p-5 border-b bg-gray-200 shadow">
+<header class="p-5 border-b bg-white">
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-3xl font-black">
             <a href="{{-- ruta a welcome.blade.php --}}" class="text-3xl font-black">Max</a>
