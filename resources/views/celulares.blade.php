@@ -10,7 +10,7 @@
         style="background-image: url('{{ asset('img//backgrounds/banners/BANNER CELULAR.png') }}');">
         {{-- Contenido Banner --}}
         <div class="flex flex-col container">
-            <h1 class="text-9xl text-white font-medium mb-4 font-poppins">
+            <h1 class="text-8xl text-white font-medium mb-4 font-poppins">
                 CELULARES
             </h1>
         </div>
