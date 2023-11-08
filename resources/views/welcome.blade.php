@@ -3,7 +3,7 @@
 @section('contenido')
 
     {{-- Componente Header --}}
-    <x-header />
+    @extends('components.header')
 
     <body class="bg-white">
 
@@ -81,7 +81,7 @@
                         <img src="img//products//tv/NanocellTV50.png" alt="product 1" class="w-full">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
+                            <a href="{{ route('product.show', ['id' => 1]) }}">
                                 class="text-white text-lg w-9 h-8 rounded-full bg-blue-700 flex items-center justify-center hover:bg-gray-800 transition"
                                 title="view product">
                                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -250,5 +250,4 @@
         <x-footer />
     </body>
 @endsection
-
 
