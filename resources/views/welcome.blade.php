@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('contenido')
-
     {{-- Componente Header --}}
     @extends('components.header')
 
@@ -30,43 +29,15 @@
         <div class="flex flex-col w-full mt-16 content-center align-middle justify-between px-12 mb-24">
             <h2 class="text-4xl font-poppins font-bold text-blue-700 capitalize text-left mb-6">Compra por Categoría</h2>
             <div class="grid grid-cols-3 gap-8 mt-5">
-                {{-- Categoría 1 - TV y Video --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/Tv.png" alt="category 1" class="w-full">
-                    <a href="{{ route('tv') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">TV y Video</a>
-                </div>
-                {{-- Categoría 2 - Celulares --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/catego.png" alt="category 1" class="w-full">
-                    <a href="{{ route('celulares') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Celulares</a>
-                </div>
-                {{-- Categoría 3 - Computación --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/laptop.png" alt="category 1" class="w-full">
-                    <a href="{{ route('computacion') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Computación</a>
-                </div>
-                {{-- Categoría 4 - Electrodomésticos --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/refrigeración.png" alt="category 1" class="w-full">
-                    <a href="{{ route('electrodomesticos') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Electrodomésticos</a>
-                </div>
-                {{-- Categoría 5 - Prendas Electrónicas --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/prendas_electronicas.jpg" alt="category 1" class="w-full">
-                    <a href="{{ route('prendas') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Prendas
-                        Electronícas</a>
-                </div>
-                {{-- Categoría 6 - Audífonos --}}
-                <div class="relative rounded overflow-hidden group">
-                    <img src="img//category/audifonos.jpg" alt="category 1" class="w-full">
-                    <a href="{{ route('audifonos') }}"
-                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">Audífonos</a>
-                </div>
+                @foreach ($categorias as $categoria)
+                    {{-- Categoría 1 - TV y Video --}}
+                    <div class="relative rounded overflow-hidden group">
+                        <img src="img//category/Tv.png" alt="category 1" class="w-full">
+                        <a href="{{ route('show_category',['categoria'=>$categoria->id,'user'=>$user]) }}"
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">
+                            {{$categoria->name}}</a>
+                    </div>
+                @endforeach
             </div>
         </div>
 
@@ -245,9 +216,8 @@
 
             </div>
 
-        
+
         </div>
         <x-footer />
     </body>
 @endsection
-

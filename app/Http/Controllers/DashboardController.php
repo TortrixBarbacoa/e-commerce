@@ -13,6 +13,11 @@ use App\Models\Detalles;
 
 class DashboardController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth'])->except('show','index');
+    }
     public function index(User $user)
     {
         $categorias = Categoria::all();
@@ -83,7 +88,7 @@ class DashboardController extends Controller
 
     public function detailsCategoria(User $user)
     {
-        $categorias = Producto::all();
+        $categorias = Categoria::all();
 
         return view('admin.adminCategoria', [
             'user' => $user,

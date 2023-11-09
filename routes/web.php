@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\ShowCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ use App\Http\Controllers\ProductosController;
 */
 
 //RUTEO A VISTAS
-Route::get('/products', function () { return view('/products');})->name('products');
-
+/* Route::get('/products', function () { return view('/products');})->name('products');
+ */
 Route::get('/tv', function () {return view('/tv');})->name('tv');
 
 Route::get('/electrodomesticos', function () {return view('/electrodomesticos');})->name('electrodomesticos');
@@ -38,6 +39,14 @@ Route::get('/audifonos', function () {return view('/audifonos');})->name('audifo
 Route::get('productos/create', function () {return view('productos/create');})->name('create');
 
 Route::get('/', [HomeController::class, 'index']) ->name('welcome');
+
+Route::get('/products', [HomeController::class, 'products']) ->name('products');
+
+Route::get('/products/{user:name}', [HomeController::class, 'products']) ->name('products_registrados');
+
+Route::get('/{user:name}/categoria/{categoria:id}', [ShowCategoryController::class, 'show']) ->name('show_category');
+
+
 
 //RUTAS PARA AUTENTUCACIÓN
 Route::get('/register',[RegisterController::class, 'index'])->name('register');

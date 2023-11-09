@@ -19,4 +19,14 @@ class HomeController extends Controller
             return view('welcome', ['productos' => $productos, 'categorias' => $categorias, 'user' => $user]);
         }
     }
+    public function products(User $user )
+    {
+        $categorias = Categoria::all();
+        $productos = Producto::all();
+        if ($user->name === null) {
+            return view('products', ['productos' => $productos, 'categorias' => $categorias]);
+        } else {
+            return view('products', ['productos' => $productos, 'categorias' => $categorias, 'user' => $user]);
+        }
+    }
 }

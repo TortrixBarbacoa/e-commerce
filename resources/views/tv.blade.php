@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-<x-header />
-
+@extends('components.header')
 <body>
     
     <h1>Categoría TV</h1>
