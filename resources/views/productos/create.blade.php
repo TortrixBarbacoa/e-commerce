@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    CREAR NUEVA PUBLICACIÓN
+    CREAR NUEVO PRODUCTO
 @endsection
 
 @section('contenido')
@@ -20,15 +20,26 @@
             </form>
         </div>
         <div class="md:w-1/2 p-6 dark:bg-black border border-whiter rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('productos.store') }}" method="POST">
+            <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-5">
-                    <label for="nombre" class="mb-2 block uppercase dark:text-white font-bold">
+                    <label for="name" class="mb-2 block uppercase dark:text-white font-bold">
                         Nombre
                     </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"
-                        class="border p-3 w-full rounded-lg bg-black text-white @error('nombre') border-red-500" @enderror value="{{ old('nombre') }}">
-                    @error('nombre')
+                    <input type="text" id="name" name="name" placeholder="Nombre del producto"
+                        class="border p-3 w-full rounded-lg bg-black text-white @error('name') border-red-500 @enderror" value="{{ old('name') }}">
+                    @error('name')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="descripcion" class="mb-2 block uppercase dark:text-white font-bold">
+                        Descripción
+                    </label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Descripción del producto"
+                        class="border p-3 w-full rounded-lg bg-black text-white @error('descripcion') border-red-500 @enderror">{{ old('descripcion') }}</textarea>
+                    @error('descripcion')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
@@ -38,24 +49,25 @@
                         Precio
                     </label>
                     <input type="text" id="precio" name="precio" placeholder="Precio del producto"
-                        class="border p-3 w-full rounded-lg bg-black text-white @error('precio') border-red-500" @enderror value="{{ old('precio') }}">
+                        class="border p-3 w-full rounded-lg bg-black text-white @error('precio') border-red-500 @enderror" value="{{ old('precio') }}">
                     @error('precio')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="mb-5">
-                    <label for="cantidad" class="mb-2 block uppercase dark:text-white font-bold">
-                        Cantidad
+                    <label for="stock" class="mb-2 block uppercase dark:text-white font-bold">
+                        Stock
                     </label>
-                    <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad del producto"
-                        class="border p-3 w-full rounded-lg bg-black text-white @error('cantidad') border-red-500" @enderror value="{{ old('cantidad') }}">
-                    @error('cantidad')
+                    <input type="text" id="stock" name="stock" placeholder="Stock del producto"
+                        class="border p-3 w-full rounded-lg bg-black text-white @error('stock') border-red-500 @enderror" value="{{ old('stock') }}">
+                    @error('stock')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="mb-5">
+                
+                   <div class="mb-5">
                     <input type="hidden" id="imagen" name="imagen" value="{{ old('imagen') }}">
                     @error('imagen')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -68,3 +80,5 @@
         </div>
     </div>
 @endsection
+
+
