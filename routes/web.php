@@ -5,8 +5,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
