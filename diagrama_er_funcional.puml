@@ -1,0 +1,131 @@
+@startuml UVGStore_ER
+
+title UVGStore - Diagrama Entidad-Relación
+
+class ROLES {
+    + id : BIGINT <<PK>>
+    + name : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class ESTADOS {
+    + id : BIGINT <<PK>>
+    + name : VARCHAR(255)
+    + belong : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class USERS {
+    + id : BIGINT <<PK>>
+    + name : VARCHAR(255)
+    + email : VARCHAR(255) <<UNIQUE>>
+    + role_id : BIGINT <<FK>>
+    + estado_id : BIGINT <<FK>>
+    + email_verified_at : TIMESTAMP
+    + password : VARCHAR(255)
+    + remember_token : VARCHAR(100)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class CATEGORIAS {
+    + id : BIGINT <<PK>>
+    + name : VARCHAR(255)
+    + descripcion : VARCHAR(255)
+    + imagen : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class PRODUCTOS {
+    + id : BIGINT <<PK>>
+    + categoria_id : BIGINT <<FK>>
+    + name : VARCHAR(255)
+    + descripcion : VARCHAR(255)
+    + imagen : VARCHAR(255)
+    + precio : VARCHAR(255)
+    + stock : VARCHAR(255)
+    + estado_id : BIGINT <<FK>>
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class CART_ITEMS {
+    + id : BIGINT <<PK>>
+    + user_id : BIGINT <<FK>>
+    + producto_id : BIGINT <<FK>>
+    + quantity : INTEGER
+    + price : DECIMAL(10,2)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class ORDENS {
+    + id : BIGINT <<PK>>
+    + user_id : BIGINT <<FK>>
+    + nit : VARCHAR(255)
+    + address : VARCHAR(255)
+    + estado_id : BIGINT <<FK>>
+    + total : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class DETALLES {
+    + id : BIGINT <<PK>>
+    + orden_id : BIGINT <<FK>>
+    + user_id : BIGINT <<FK>>
+    + producto_id : BIGINT <<FK>>
+    + cantidad : INTEGER
+    + subtotal : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+ROLES ||--o{ USERS : "1:N"
+ESTADOS ||--o{ USERS : "1:N"
+ESTADOS ||--o{ PRODUCTOS : "1:N"
+ESTADOS ||--o{ ORDENS : "1:N"
+
+CATEGORIAS ||--o{ PRODUCTOS : "1:N"
+
+USERS ||--o{ CART_ITEMS : "1:N"
+PRODUCTOS ||--o{ CART_ITEMS : "1:N"
+
+USERS ||--o{ ORDENS : "1:N"
+ORDENS ||--o{ DETALLES : "1:N"
+USERS ||--o{ DETALLES : "1:N"
+PRODUCTOS ||--o{ DETALLES : "1:N"
+
+note top of ROLES
+Roles del Sistema:
+• 1 = Administrador
+• 2 = Cliente
+end note
+
+note top of ESTADOS
+Estados por Entidad:
+• Users: Activo/Inactivo
+• Productos: Disponible/Agotado
+• Órdenes: Pendiente/Procesada
+end note
+
+note top of CART_ITEMS
+Carrito de Compras:
+• Relación Many-to-Many
+• Unique constraint (user_id, producto_id)
+• Precio almacenado para historial
+end note
+
+note top of DETALLES
+Detalles de Órdenes:
+• Relación con user_id para auditoría
+• Cantidad y subtotal por producto
+• Historial completo de compras
+end note
+
+@enduml
+
+

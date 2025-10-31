@@ -1,0 +1,118 @@
+@startuml UVGStore_Database
+
+title UVGStore - Base de Datos
+
+class ROLES {
+    + id : BIGINT
+    + name : VARCHAR
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class ESTADOS {
+    + id : BIGINT
+    + name : VARCHAR
+    + belong : VARCHAR
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class USERS {
+    + id : BIGINT
+    + name : VARCHAR
+    + email : VARCHAR
+    + role_id : BIGINT
+    + estado_id : BIGINT
+    + password : VARCHAR
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class CATEGORIAS {
+    + id : BIGINT
+    + name : VARCHAR
+    + descripcion : VARCHAR
+    + imagen : VARCHAR
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class PRODUCTOS {
+    + id : BIGINT
+    + categoria_id : BIGINT
+    + name : VARCHAR
+    + descripcion : VARCHAR
+    + imagen : VARCHAR
+    + precio : VARCHAR
+    + stock : VARCHAR
+    + estado_id : BIGINT
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class CART_ITEMS {
+    + id : BIGINT
+    + user_id : BIGINT
+    + producto_id : BIGINT
+    + quantity : INTEGER
+    + price : DECIMAL
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class ORDENS {
+    + id : BIGINT
+    + user_id : BIGINT
+    + nit : VARCHAR
+    + address : VARCHAR
+    + estado_id : BIGINT
+    + total : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class DETALLES {
+    + id : BIGINT
+    + orden_id : BIGINT
+    + user_id : BIGINT
+    + producto_id : BIGINT
+    + cantidad : INTEGER
+    + subtotal : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+ROLES ||--o{ USERS
+ESTADOS ||--o{ USERS
+ESTADOS ||--o{ PRODUCTOS
+ESTADOS ||--o{ ORDENS
+CATEGORIAS ||--o{ PRODUCTOS
+USERS ||--o{ CART_ITEMS
+PRODUCTOS ||--o{ CART_ITEMS
+USERS ||--o{ ORDENS
+ORDENS ||--o{ DETALLES
+USERS ||--o{ DETALLES
+PRODUCTOS ||--o{ DETALLES
+
+note top of ROLES
+Roles:
+• 1 = Administrador
+• 2 = Cliente
+end note
+
+note top of ESTADOS
+Estados:
+• Users: Activo/Inactivo
+• Productos: Disponible/Agotado
+• Órdenes: Pendiente/Procesada
+end note
+
+note top of CART_ITEMS
+Carrito:
+• Many-to-Many
+• Unique(user_id, producto_id)
+end note
+
+@enduml
+
+

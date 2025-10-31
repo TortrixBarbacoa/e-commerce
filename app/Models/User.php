@@ -8,6 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property int $role_id
+ * @property int $estado_id
+ * @property float $cart_total
+ * @property int $cart_count
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -55,5 +66,23 @@ class User extends Authenticatable
 
     public function estado(){
         return $this->belongsTo(Estado::class);
+    }
+
+    /**
+     * Get the cart items for the user.
+     */
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
+
+    public function getCartTotalAttribute()
+    {
+        return $this->cartItems->sum('total');
+    }
+
+    public function getCartCountAttribute()
+    {
+        return $this->cartItems->sum('quantity');
     }
 }

@@ -168,6 +168,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
          //AGREGANDO INTERVENTION/IMAGE
          Intervention\Image\ImageServiceProvider::class,

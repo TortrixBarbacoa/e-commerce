@@ -1,0 +1,178 @@
+@startuml UVGStore_ER_Diagram
+
+!theme plain
+skinparam linetype ortho
+skinparam backgroundColor #FFFFFF
+
+title <size:20><color:#2E86AB><b>UVGStore - Diagrama Entidad-Relación</b></color></size>
+
+note right : Sistema E-commerce Completo\nDesarrollado con Laravel 10\nBase de Datos: MySQL
+
+class "ROLES" as roles {
+    + id : BIGINT <<PK>>
+    --
+    + name : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "ESTADOS" as estados {
+    + id : BIGINT <<PK>>
+    --
+    + name : VARCHAR(255)
+    + belong : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "USERS" as users {
+    + id : BIGINT <<PK>>
+    --
+    + name : VARCHAR(255)
+    + email : VARCHAR(255) <<UNIQUE>>
+    + role_id : BIGINT <<FK>>
+    + estado_id : BIGINT <<FK>>
+    + email_verified_at : TIMESTAMP
+    + password : VARCHAR(255)
+    + remember_token : VARCHAR(100)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "CATEGORIAS" as categorias {
+    + id : BIGINT <<PK>>
+    --
+    + name : VARCHAR(255)
+    + descripcion : VARCHAR(255)
+    + imagen : VARCHAR(255)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "PRODUCTOS" as productos {
+    + id : BIGINT <<PK>>
+    --
+    + categoria_id : BIGINT <<FK>>
+    + name : VARCHAR(255)
+    + descripcion : VARCHAR(255)
+    + imagen : VARCHAR(255)
+    + precio : VARCHAR(255)
+    + stock : VARCHAR(255)
+    + estado_id : BIGINT <<FK>>
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "CART_ITEMS" as cart_items {
+    + id : BIGINT <<PK>>
+    --
+    + user_id : BIGINT <<FK>>
+    + producto_id : BIGINT <<FK>>
+    + quantity : INTEGER
+    + price : DECIMAL(10,2)
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "ORDENS" as ordens {
+    + id : BIGINT <<PK>>
+    --
+    + user_id : BIGINT <<FK>>
+    + nit : VARCHAR(255)
+    + address : VARCHAR(255)
+    + estado_id : BIGINT <<FK>>
+    + total : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+class "DETALLES" as detalles {
+    + id : BIGINT <<PK>>
+    --
+    + orden_id : BIGINT <<FK>>
+    + user_id : BIGINT <<FK>>
+    + producto_id : BIGINT <<FK>>
+    + cantidad : INTEGER
+    + subtotal : DOUBLE
+    + created_at : TIMESTAMP
+    + updated_at : TIMESTAMP
+}
+
+roles ||--o{ users : "tiene"
+estados ||--o{ users : "tiene"
+estados ||--o{ productos : "tiene"
+estados ||--o{ ordens : "tiene"
+
+categorias ||--o{ productos : "contiene"
+
+users ||--o{ cart_items : "agrega"
+productos ||--o{ cart_items : "incluido_en"
+
+users ||--o{ ordens : "realiza"
+ordens ||--o{ detalles : "contiene"
+users ||--o{ detalles : "compra"
+productos ||--o{ detalles : "vendido_en"
+
+note top of roles
+  <b>Roles del Sistema:</b>
+  • 1 = Administrador
+  • 2 = Cliente
+end note
+
+note top of estados
+  <b>Estados por Entidad:</b>
+  • Users: Activo/Inactivo
+  • Productos: Disponible/Agotado
+  • Órdenes: Pendiente/Procesada/Enviada
+end note
+
+note top of cart_items
+  <b>Carrito de Compras:</b>
+  • Relación Many-to-Many
+  • Unique constraint en (user_id, producto_id)
+  • Precio almacenado para historial
+end note
+
+note top of detalles
+  <b>Detalles de Órdenes:</b>
+  • Relación con user_id para auditoría
+  • Cantidad y subtotal por producto
+  • Historial completo de compras
+end note
+
+note bottom of users
+  <b>Constraints:</b>
+  • email UNIQUE
+  • role_id FK → roles.id
+  • estado_id FK → estados.id
+end note
+
+note bottom of productos
+  <b>Constraints:</b>
+  • categoria_id FK → categorias.id
+  • estado_id FK → estados.id
+end note
+
+note bottom of cart_items
+  <b>Constraints:</b>
+  • user_id FK → users.id
+  • producto_id FK → productos.id
+  • UNIQUE(user_id, producto_id)
+end note
+
+note bottom of ordens
+  <b>Constraints:</b>
+  • user_id FK → users.id
+  • estado_id FK → estados.id
+end note
+
+note bottom of detalles
+  <b>Constraints:</b>
+  • orden_id FK → ordens.id
+  • user_id FK → users.id
+  • producto_id FK → productos.id
+end note
+
+@enduml
+
+

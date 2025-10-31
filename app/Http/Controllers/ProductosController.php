@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Producto;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
 {
@@ -40,6 +41,14 @@ class ProductosController extends Controller
         # Paso 3: Responder con éxito o fracaso
         return redirect()->route("dashboard", auth()->user()->name);
 
+    }
+    
+    public function show($id)
+    {
+        $producto = Producto::with('categoria')->findOrFail($id);
+        $user = Auth::user();
+        
+        return view('productos.show', compact('producto', 'user'));
     }
     
 }

@@ -1,66 +1,211 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 UVGStore - Sistema E-commerce Completo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-10-red.svg)
+![PHP](https://img.shields.io/badge/PHP-8.1+-blue.svg)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC.svg)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg)
 
-## About Laravel
+## 📋 Descripción del Proyecto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**UVGStore** es un sistema de comercio electrónico completo desarrollado con Laravel 10, diseñado para demostrar las capacidades técnicas más avanzadas de desarrollo web. El proyecto incluye todas las funcionalidades esenciales de un e-commerce moderno, desde la gestión de usuarios hasta el procesamiento de órdenes.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### ✅ **Funcionalidades Implementadas**
+- 🔐 **Sistema de Autenticación Completo** - Registro, login y roles diferenciados
+- 🛍️ **Catálogo de Productos** - Gestión completa con categorías dinámicas
+- 🔍 **Búsqueda Avanzada** - Filtros por categoría, precio y texto
+- 🛒 **Carrito de Compras** - Funcionalidad completa con persistencia
+- 👨‍💼 **Panel de Administración** - Dashboard con métricas y gestión
+- 📱 **Diseño Responsivo** - Optimizado para todos los dispositivos
+- 🖼️ **Gestión de Imágenes** - Soporte para imágenes locales y externas (Unsplash)
 
-## Learning Laravel
+### 🚧 **En Desarrollo**
+- 💳 **Sistema de Pagos** - Integración con Stripe/PayPal
+- 📧 **Notificaciones** - Email automático con SendGrid
+- 📊 **Analytics** - Métricas avanzadas con Google Analytics
+- ☁️ **CDN** - Optimización de imágenes con CloudFlare
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🏗️ Arquitectura Técnica
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### **Stack Tecnológico**
+- **Backend:** Laravel 10 + PHP 8.1+
+- **Frontend:** Blade Templates + Tailwind CSS
+- **Base de Datos:** MySQL 8.0+
+- **JavaScript:** Vanilla JS + Dropzone.js
+- **Build Tool:** Vite
+- **Iconos:** Font Awesome
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **Estructura del Proyecto**
+```
+app/
+├── Http/Controllers/     # Controladores de la aplicación
+├── Models/              # Modelos Eloquent
+├── Providers/           # Service Providers personalizados
+resources/
+├── views/               # Templates Blade
+├── js/                  # JavaScript del frontend
+├── css/                 # Estilos CSS
+routes/
+├── web.php              # Rutas web
+database/
+├── migrations/          # Migraciones de BD
+├── seeders/            # Seeders de datos
+```
 
-## Laravel Sponsors
+## 📊 Métricas del Proyecto
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Métrica | Valor |
+|---------|-------|
+| **Líneas de Código** | 2,500+ |
+| **Controladores** | 8 |
+| **Modelos** | 4 |
+| **Vistas Blade** | 20+ |
+| **Rutas** | 25+ |
+| **Funcionalidades** | 8 módulos |
 
-### Premium Partners
+## 🛠️ Instalación y Configuración
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### **Requisitos del Sistema**
+- PHP 8.1 o superior
+- MySQL 8.0 o superior
+- Composer
+- Node.js & NPM
+- Servidor web (Apache/Nginx)
 
-## Contributing
+### **Pasos de Instalación**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clonar el repositorio**
+```bash
+git clone [url-del-repositorio]
+cd e-commerce
+```
 
-## Code of Conduct
+2. **Instalar dependencias PHP**
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Instalar dependencias Node.js**
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+4. **Configurar variables de entorno**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Configurar base de datos**
+```bash
+# Editar .env con credenciales de BD
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ecommerce
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+6. **Ejecutar migraciones**
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. **Compilar assets**
+```bash
+npm run build
+```
+
+8. **Iniciar servidor**
+```bash
+php artisan serve
+```
+
+## 🌐 Rutas Principales
+
+### **Rutas Públicas**
+- `/` - Página de inicio
+- `/products` - Catálogo de productos
+- `/search` - Búsqueda de productos
+- `/categoria/{id}` - Productos por categoría
+- `/producto/{id}` - Detalle de producto
+
+### **Rutas de Autenticación**
+- `/login` - Iniciar sesión
+- `/register` - Registrarse
+- `/logout` - Cerrar sesión
+
+### **Rutas Protegidas**
+- `/cart` - Carrito de compras
+- `/checkout` - Proceso de compra
+- `/Dashboard/{user}` - Panel de administración
+
+## 🔒 Seguridad
+
+- ✅ Autenticación robusta con Laravel Auth
+- ✅ Autorización por roles (Admin/Cliente)
+- ✅ Protección CSRF en todos los formularios
+- ✅ Validación de entrada con Form Requests
+- ✅ Escape automático de datos en vistas
+
+## 📱 Responsive Design
+
+- 📱 **Mobile First** - Diseño optimizado para móviles
+- 💻 **Desktop** - Experiencia completa en escritorio
+- 🎨 **Tailwind CSS** - Framework utility-first
+- ⚡ **Performance** - Carga rápida y optimizada
+
+## 🧪 Testing
+
+```bash
+# Ejecutar tests
+php artisan test
+
+# Tests específicos
+php artisan test --filter=UserTest
+```
+
+## 📚 Documentación
+
+- 📋 **[Documentación Completa](DOCUMENTACION_PROYECTO.md)** - Documentación técnica detallada
+- 🚀 **[Presentación Kick Off](KICKOFF_PRESENTACION.md)** - Presentación del proyecto
+- 🔧 **[API Documentation](docs/api.md)** - Documentación de endpoints
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 👥 Autores
+
+- **[Tu Nombre]** - *Desarrollo completo* - [GitHub](https://github.com/tu-usuario)
+
+## 🙏 Agradecimientos
+
+- Laravel Framework
+- Tailwind CSS
+- Font Awesome
+- Unsplash (para imágenes de prueba)
+- Comunidad de desarrolladores
+
+---
+
+## 📞 Contacto
+
+**Proyecto:** UVGStore  
+**Email:** [tu-email@ejemplo.com]  
+**GitHub:** [tu-usuario](https://github.com/tu-usuario)
+
+---
+
+*Desarrollado con ❤️ para demostrar las capacidades técnicas más avanzadas de desarrollo web*

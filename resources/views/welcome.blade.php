@@ -33,7 +33,7 @@
                     {{-- Categoría 1 - TV y Video --}}
                     <div class="relative rounded overflow-hidden group">
                         <img src="img//category/Tv.png" alt="category 1" class="w-full">
-                        <a href="{{ route('show_category',['categoria'=>$categoria->id,'user'=>$user]) }}"
+                        <a href="{{ route('show_category',['categoria'=>$categoria->id]) }}"
                             class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-lato font-medium group-hover:bg-opacity-60 transition">
                             {{$categoria->name}}</a>
                     </div>

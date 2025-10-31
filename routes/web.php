@@ -9,6 +9,9 @@ use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ShowCategoryController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +45,12 @@ Route::get('/', [HomeController::class, 'index']) ->name('welcome');
 
 Route::get('/products', [HomeController::class, 'products']) ->name('products');
 
-Route::get('/products/{user:name}', [HomeController::class, 'products']) ->name('products_registrados');
+Route::get('/products-registrados', [HomeController::class, 'products']) ->name('products_registrados');
 
-Route::get('/{user:name}/categoria/{categoria:id}', [ShowCategoryController::class, 'show']) ->name('show_category');
+//RUTAS DE BÚSQUEDA
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
+Route::get('/categoria/{categoria:id}', [ShowCategoryController::class, 'show']) ->name('show_category');
 
 
 
@@ -59,7 +65,7 @@ Route::get('/login',[LoginController::class,'index'])->name('login');
 
 Route::post('/login',[LoginController::class, 'store']) ->name('login');
 
-Route::get('/{user:name}', [HomeController::class, 'index']) ->name('registrado');
+Route::get('/registrado', [HomeController::class, 'index']) ->name('registrado');
 
 //OTRAS RUTAS
 Route::get('/producto/{id}', [ProductosController::class, 'show'])->name('product.show');
@@ -78,3 +84,17 @@ Route::get('/Dashboard/{user:name}/categoria', [DashboardController::class, 'det
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
 //Ruta para crear Nuevo Producto
 Route::post("/productos", [ProductosController::class, "store"])->name("productos.store");
+
+//RUTAS DEL CARRITO
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::put('/cart/{cartItem}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('/cart/{cartItem}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::delete('/cart', [CartController::class, 'clear'])->name('cart.clear');
+    
+    //RUTAS DE CHECKOUT
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process');
+    Route::get('/orders/{id}/success', [CheckoutController::class, 'success'])->name('orders.success');
+});

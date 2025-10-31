@@ -6,6 +6,7 @@
     @stack('styles')
     <title>E-commerce - @yield('titulo')</title>
     @vite('resources/css/app.css')
+    @vite('resources/css/custom.css')
     @vite('resources/js/app.js')
     <script src="https://kit.fontawesome.com/87a0dc1d3c.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
